@@ -1,0 +1,416 @@
+//       VARIABLES
+$strong: #bbf5ff;
+$py: #FFD43B;
+$php: #787CB5;
+$sql: #FF5003;
+$js: #Fcb43a;
+$go: #29BEB0;
+$wh: #fff;
+$bl: #000;
+$backgr: #1a355d;
+$block: #1e3c64;
+
+
+
+//       MIXIN'S
+@mixin flex ($dir, $space, $align) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $space;
+}
+@mixin backgr {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin h2{
+    text-align: center;
+    font-size: 3.5em;
+    color: $wh;
+}
+@mixin hr{
+    margin: auto;
+    width: 270px;
+}
+
+
+//       INHERITANCE
+.div{
+    width: 85%;
+    height: 600px;
+    margin: 50px auto;
+    text-align: center;
+    color: $wh;
+}
+.button{
+    font-size: 20px;
+    margin: 10px;
+    margin: 15px auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: $wh;
+    background-color: rgb(28, 28, 114);
+}
+
+
+//       ANIMATIONS
+@keyframes spin {
+    from {transform:rotateY(0deg);}
+    to {transform:rotateY(360deg);}
+}
+
+
+//       CODE
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: $backgr;
+}
+a{
+    color: $wh;
+    text-decoration: none;
+}
+a:hover{
+    color: $py;
+    transition: 0.4s;
+}
+ul{
+    list-style-type: none;
+}
+header{
+    width: 100%;
+    @include flex (row, space-around, center);
+    background-color: rgba( $backgr, 0.95);
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    h1{
+        &::first-letter{
+            color: $py;
+            text-transform: lowercase;
+        }
+        a{
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+    }
+    ul{
+        display: inline-block;
+        li{
+            padding: 5px 20px;
+            float: right;
+            border-right: 1px solid $wh;
+            a{
+                &:hover{
+                    color: $py;
+                    transition: 0.4s;
+                }
+            }
+            &:first-child{
+                border-right: none;
+            }
+        }
+    }
+}
+main,
+#main_wrap{
+    width: 100%;
+    height: 500px;
+}
+main{
+    background: linear-gradient(rgba($backgr,0.7),rgba($backgr,0.7)), url(img/background.jpg);
+    @include backgr;
+    margin: 0px auto;
+    color: $wh;
+    #main_wrap{
+        margin: auto;
+        @include flex (row, space-around, center);
+        #text{
+            p{
+                font-size: 1em;
+                &:last-child{
+                    padding: 94px;
+                    font-size: 1.7em;
+                }
+            }
+            h1{
+                font-size: 3.5em;
+            }
+            i{
+                font-size: 1.2em;
+                padding: 10px;
+                margin: 5px;
+                border-radius: 10px;
+                &:hover{
+                    color: $wh;
+                }
+            }
+            .fa-instagram{
+                background-color: #DD2A7B;
+            }
+            .fa-twitter{
+                background-color: #08a0e9;
+            }
+            .fa-linkedin{
+                background-color: #0077B5;
+            }
+        }
+        #author{
+            width: 260px;
+            height: 340px;
+            border-radius: 20px;
+            background: linear-gradient(rgba($backgr,0.5),rgba($backgr,0.5)), url(img/autor.jpg);
+            @include backgr;
+        }
+    }
+}
+#about{
+    @extend .div;
+    h2{
+        @include h2;
+    }
+    hr{
+        @include hr;
+    }
+    p{
+        margin: 20px auto;
+        font-size: 1.7em;
+        &:nth-child(3){
+            padding: 30px;
+        }
+    }
+    #py,#php,#js{
+        font-weight: bold;
+    }
+    #py{
+        color: $py;
+    }
+    #php{
+        color: $php;
+    }
+    #js{
+        color: $js;
+    }
+    strong{
+        color: $strong;
+    }
+}
+#skills{
+    width: 65%;
+    height: 700px;
+    margin: auto;
+    color: $wh;
+    h2{
+        @include h2;
+    }
+    hr{
+        @include hr;
+    }
+    #art_wrap{
+        width: 100%;
+        height: 600px;
+        flex-wrap: wrap;
+        @include flex (row, space-evenly, center);
+        article{
+            width: 44%;
+            height: 44%;
+            border-radius: 20px;
+            background-color: $block;
+            text-align: center;
+            h3{
+                font-size: 3em;
+                padding-top: 8px;
+            }
+            i{
+                padding: 30px;
+                font-size: 6em;
+                animation-name: spin;
+                animation-duration: 2s;
+                animation-delay: 0.4s;
+                animation-iteration-count: infinite;
+            }
+            /*meter{
+                font-size: 50px;
+                padding-bottom: 20px;
+                color: $py;
+            }*/
+            .container { 
+                background-color: #444857; 
+                width: 80%; 
+                border-radius: 15px; 
+                text-align: center;
+                margin: auto;
+            } 
+            .skill {  
+                color: rgb(255, 255, 255); 
+                padding: 1%; 
+                text-align: right; 
+                font-size: 20px; 
+                border-radius: 15px; 
+            } 
+            .fa-php{
+                color: $php;
+            }
+            .fa-js{
+                color: $js;
+            }
+            .fa-database{
+                color: $sql;
+            }
+            .fa-python{
+                color: $py;
+            }
+            .bar_py { 
+                width: 90%; 
+                background-color: $py;
+            }
+            .bar_php { 
+                width: 90%; 
+                background-color: $php;
+            }
+            .bar_sql { 
+                width: 85%; 
+                background-color: $sql;
+            }
+            .bar_js { 
+                width: 95%; 
+                background-color: $js;
+            }
+        }
+    }
+
+}
+#projects{
+    width: 100%;
+    height: 1200px;
+    h2{
+        @include h2;
+    }
+    hr{
+        @include hr;
+    }
+    article{
+        width: 65%;
+        height: 300px;
+        margin: 30px auto;
+        border-radius: 20px;
+        background-color: $block;
+        @include flex (row, space-around, center);
+        .desc{
+            width: 40%;
+            height: 95%;
+            color: $wh;
+            h3{
+               font-size: 2em;
+               margin: 20px 0px;
+               text-align: center;
+            }
+            p{
+                text-align: justify;
+                font-size: 100%;
+            }
+        }
+        .project{
+            width: 50%;
+            height: 95%;
+            .projectPicture{
+                width: auto;
+                height: 75%;
+                border-radius: 20px;
+                margin-top: 10px;
+                @include backgr;
+            }
+            .one{
+                background-image: url(img/project_one.png);
+            }
+            .two{
+                background-image: url(img/project_two.png);
+            }
+            .three{
+                background-image: url(img/project_three.png);
+            }
+            .techLang{
+                @include flex (row, center, center);
+                span{
+                    text-align: center;
+                    color: $wh;
+                    background-color: rgb(28, 28, 114);
+                    font-size: 0.9em;
+                    margin: 10px 5px;
+                    padding: 10px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}
+#contact{
+    width: 50%;
+    height: 450px;
+    background-color: $block;
+    margin: auto;
+    border-radius: 20px;
+    @include flex (row, space-evenly, center);
+    #contactPicture{
+        width: 50%;
+        height: 95%;
+        @include flex (column, center, center);
+        button{
+            @extend .button;
+        }
+    }
+    #form{
+        h2{
+            @include h2;
+        }
+        form{
+            @include flex (column, center, flex-start);
+            div{
+                input[type="text"],
+                input[type="email"],
+                textarea{
+                    font-size: 20px;
+                    margin: 10px;
+                    border-radius: 10px;
+                    padding: 5px;
+                }
+            }
+            #submit{
+                @extend .button;
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    color: $wh;
+    background-color: rgb(28, 28, 114);
+    margin-top: 40px;
+    #footerWrap{
+        width: 80%;
+        margin: auto;
+        @include flex (row, space-between, center);
+        #files{
+            margin-top: 15px;
+            margin-bottom: 15px;
+            a{
+                padding: 0px 10px;
+                border-left: 1px solid $wh;
+                &:first-child{
+                    border: none;
+                }
+            }
+        }
+    }
+}

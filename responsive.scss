@@ -1,0 +1,363 @@
+//       VARIABLES
+$strong: #bbf5ff;
+$py: #FFD43B;
+$php: #787CB5;
+$sql: #FF5003;
+$js: #Fcb43a;
+$go: #29BEB0;
+$wh: #fff;
+$bl: #000;
+$backgr: rgb(26, 53, 93);
+$block: rgb(30, 60, 100);
+
+
+
+//       MIXIN'S
+@mixin flex ($dir, $space, $align) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $space;
+}
+@mixin backgr {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin h2{
+    text-align: center;
+    font-size: 3.5em;
+    color: $wh;
+}
+@mixin hr{
+    margin: auto;
+    width: 270px;
+}
+
+
+//       INHERITANCE
+.div{
+    width: 85%;
+    height: 600px;
+    margin: 50px auto;
+    text-align: center;
+    color: $wh;
+}
+.button{
+    font-size: 20px;
+    margin: 10px;
+    margin: 15px auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: $wh;
+    background-color: rgb(28, 28, 114);
+}
+
+
+
+//       CODE
+@media (max-width: 1250px){
+    main{
+        height: 560px;
+        #main_wrap{
+            height: 520px;
+            padding: 50px 0px;
+            @include flex (column, space-around, center);
+            gap: 25px;
+            #text{
+                text-align: center;
+            }
+            #author{
+                background-position: top;
+            }
+        }
+    }
+    #projects{
+        article{
+            width: 75%;
+        }
+    }
+    #contact{
+        height: 650px;
+        @include flex (column-reverse, space-evenly, center);
+        #form{
+            border-bottom: 0.5px solid $wh;
+            h2{
+                margin: 15px 0px;
+            }
+        }
+    }
+    footer{
+        #footerWrap{
+            @include flex (column, center, center);
+            #copyright{
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+@media (max-width: 911px){
+    #about{
+        height: 560px;
+        p{
+            font-size: 1.3em;
+        }
+    }
+    #skills{
+        width: 80%;
+    }
+    #projects{
+        article{
+            .desc{
+                h3{
+                    font-size: 1.6em;
+                }
+                p{
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+    #contact{
+        width: 70%;
+    }
+}
+@media (max-width: 740px){
+    #skills{
+        width: 100%;
+        height: 1300px;
+        margin-bottom: 50px;
+        #art_wrap{
+            margin: 25px auto;
+            width: 100%;
+            height: 1100px;
+            flex-wrap: nowrap;
+            gap: 20px;
+            @include flex (column, space-evenly, center);
+            article{
+                width: 60%;
+            }
+        }
+    }
+    #projects{
+        height: 1800px;
+        article{
+            width: 80%;
+            height: 500px;
+            @include flex (column, space-between, center);
+            .desc{
+                width: 90%;
+                height: 35%;
+            }
+            .project{
+                width: 90%;
+                .posLeft{
+                    background-position: left;
+                }
+                .posRight{
+                    background-position: right;
+                }
+            }
+        }
+    }
+    #contact{
+        width: 80%;
+    }
+}
+@media (max-width: 620px){
+    header{
+        h1{
+            font-size: 1.5em;
+        }
+        ul{
+            li{
+                font-size: 0.7em;
+            }
+       }
+    }
+    main{
+        #main_wrap{
+            #text{
+                h1{
+                    font-size: 2.4em;
+                }
+                p{
+                    font-size: 0.85em;
+                    &:last-child{
+                        font-size: 1.15em;
+                    }
+                }
+                i{
+                    padding: 7px;
+                    font-size: 1em;
+                    border-radius: 7px;
+                }
+            }
+            #author{
+                background-position: top;
+            }
+        }
+    }
+    #about{
+        p{
+            font-size: 1.1em;
+        }
+    }
+    footer{
+        font-size: 0.7em;
+    }
+}
+@media (max-width: 484px){
+    header{
+        h1{
+            font-size: 1.3em;
+        }
+        ul{
+            li{
+                padding: 5px 10px;
+                font-size: 0.58em;
+            }
+        }
+    }
+    main{
+        #main_wrap{
+            justify-content: center;
+            #author{
+                height: 260px;
+            }
+        }
+    }
+    #about{
+        height: 500px;
+    }
+    #about,
+    #skills,
+    #projects,
+    #contact #form{
+        h2{
+            font-size: 2em;
+        }
+        hr{
+            width: 150px;
+        }
+    }
+    #skills{
+        height: 1100px;
+        #art_wrap{
+            height: 1000px;
+            article{
+                width: 55%;
+                height: 35%;
+                h3{
+                    font-size: 2em;
+                }
+                i{
+                    font-size: 5em;
+                }
+            }
+        }
+    }
+    #contact{   
+        height: 500px;
+        #contactPicture{
+            button{
+                font-size: 15px;
+            }
+        }  
+        #form{
+            form{
+                div{
+                    input[type="text"],
+                    input[type="email"],
+                    textarea{
+                        font-size: 15px;
+                        margin: 5px;
+                    }
+                }
+                #submit{
+                    font-size: 15px;
+                }
+            } 
+        }
+    }
+}
+@media(max-width: 444px){
+    main{
+        #main_wrap{
+            #text{
+                p{
+                    font-size: 0.8em;
+                    &:last-child{
+                        font-size: 0.9em;
+                    }
+                }
+                h1{
+                    font-size: 2.05em;
+                }
+            }
+        }
+    }
+    #about{
+        height: 470px;
+        p{
+            font-size: 0.9em;
+            &:nth-child(3){
+                padding: 20px;
+            }
+        }
+    }
+    #skills{
+        #art_wrap{
+            article{
+                width: 75%;
+            }
+        }
+    }
+    #projects{
+        height: 1550px;
+        article{
+            height: 440px;
+            .desc{
+                h3{
+                    font-size: 1.3em;
+                }
+                p{
+                    font-size: 0.75em;
+                }
+            }
+        }
+        .project{
+            .techLang{
+                font-size: 0.65em;
+                flex-wrap: wrap;
+            }
+            .nowrap{
+                flex-wrap: nowrap !important;
+            }
+        }
+    }
+    #contact{
+        width: 80%;
+    }
+    footer{
+        font-size: 0.59em;
+    }
+}
+@media (max-width: 375px){
+    header{
+        h1{
+            font-size: 1.12em;
+        }
+    }
+    nav{
+        ul{
+            li{
+                font-size: 0.5em;
+            }
+        }
+    }    
+    footer{
+        font-size: 0.45em;
+    }
+}

@@ -1,0 +1,283 @@
+.div {
+  width: 85%;
+  height: 600px;
+  margin: 50px auto;
+  text-align: center;
+  color: #fff;
+}
+
+.button {
+  font-size: 20px;
+  margin: 10px;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  background-color: rgb(28, 28, 114);
+}
+
+@media (max-width: 1250px) {
+  main {
+    height: 560px;
+  }
+  main #main_wrap {
+    height: 520px;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+  }
+  main #main_wrap #text {
+    text-align: center;
+  }
+  main #main_wrap #author {
+    background-position: top;
+  }
+  #projects article {
+    width: 75%;
+  }
+  #contact {
+    height: 650px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #contact #form {
+    border-bottom: 0.5px solid #fff;
+  }
+  #contact #form h2 {
+    margin: 15px 0px;
+  }
+  footer #footerWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer #footerWrap #copyright {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 911px) {
+  #about {
+    height: 560px;
+  }
+  #about p {
+    font-size: 1.3em;
+  }
+  #skills {
+    width: 80%;
+  }
+  #projects article .desc h3 {
+    font-size: 1.6em;
+  }
+  #projects article .desc p {
+    font-size: 0.9em;
+  }
+  #contact {
+    width: 70%;
+  }
+}
+@media (max-width: 740px) {
+  #skills {
+    width: 100%;
+    height: 1300px;
+    margin-bottom: 50px;
+  }
+  #skills #art_wrap {
+    margin: 25px auto;
+    width: 100%;
+    height: 1100px;
+    flex-wrap: nowrap;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #skills #art_wrap article {
+    width: 60%;
+  }
+  #projects {
+    height: 1800px;
+  }
+  #projects article {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #projects article .desc {
+    width: 90%;
+    height: 35%;
+  }
+  #projects article .project {
+    width: 90%;
+  }
+  #projects article .project .posLeft {
+    background-position: left;
+  }
+  #projects article .project .posRight {
+    background-position: right;
+  }
+  #contact {
+    width: 80%;
+  }
+}
+@media (max-width: 620px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+  header ul li {
+    font-size: 0.7em;
+  }
+  main #main_wrap #text h1 {
+    font-size: 2.4em;
+  }
+  main #main_wrap #text p {
+    font-size: 0.85em;
+  }
+  main #main_wrap #text p:last-child {
+    font-size: 1.15em;
+  }
+  main #main_wrap #text i {
+    padding: 7px;
+    font-size: 1em;
+    border-radius: 7px;
+  }
+  main #main_wrap #author {
+    background-position: top;
+  }
+  #about p {
+    font-size: 1.1em;
+  }
+  footer {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 484px) {
+  header h1 {
+    font-size: 1.3em;
+  }
+  header ul li {
+    padding: 5px 10px;
+    font-size: 0.58em;
+  }
+  main #main_wrap {
+    justify-content: center;
+  }
+  main #main_wrap #author {
+    height: 260px;
+  }
+  #about {
+    height: 500px;
+  }
+  #about h2,
+  #skills h2,
+  #projects h2,
+  #contact #form h2 {
+    font-size: 2em;
+  }
+  #about hr,
+  #skills hr,
+  #projects hr,
+  #contact #form hr {
+    width: 150px;
+  }
+  #skills {
+    height: 1100px;
+  }
+  #skills #art_wrap {
+    height: 1000px;
+  }
+  #skills #art_wrap article {
+    width: 55%;
+    height: 35%;
+  }
+  #skills #art_wrap article h3 {
+    font-size: 2em;
+  }
+  #skills #art_wrap article i {
+    font-size: 5em;
+  }
+  #contact {
+    height: 500px;
+  }
+  #contact #contactPicture button {
+    font-size: 15px;
+  }
+  #contact #form form div input[type=text],
+  #contact #form form div input[type=email],
+  #contact #form form div textarea {
+    font-size: 15px;
+    margin: 5px;
+  }
+  #contact #form form #submit {
+    font-size: 15px;
+  }
+}
+@media (max-width: 444px) {
+  main #main_wrap #text p {
+    font-size: 0.8em;
+  }
+  main #main_wrap #text p:last-child {
+    font-size: 0.9em;
+  }
+  main #main_wrap #text h1 {
+    font-size: 2.05em;
+  }
+  #about {
+    height: 470px;
+  }
+  #about p {
+    font-size: 0.9em;
+  }
+  #about p:nth-child(3) {
+    padding: 20px;
+  }
+  #skills #art_wrap article {
+    width: 75%;
+  }
+  #projects {
+    height: 1550px;
+  }
+  #projects article {
+    height: 440px;
+  }
+  #projects article .desc h3 {
+    font-size: 1.3em;
+  }
+  #projects article .desc p {
+    font-size: 0.75em;
+  }
+  #projects .project .techLang {
+    font-size: 0.65em;
+    flex-wrap: wrap;
+  }
+  #projects .project .nowrap {
+    flex-wrap: nowrap !important;
+  }
+  #contact {
+    width: 80%;
+  }
+  footer {
+    font-size: 0.59em;
+  }
+}
+@media (max-width: 375px) {
+  header h1 {
+    font-size: 1.12em;
+  }
+  nav ul li {
+    font-size: 0.5em;
+  }
+  footer {
+    font-size: 0.45em;
+  }
+}/*# sourceMappingURL=responsive.css.map */
